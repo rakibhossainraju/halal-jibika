@@ -1,0 +1,64 @@
+@import "../../variables.module.css";
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 4px 2px var(--gray-60);
+}
+
+.navLogo {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 3rem;
+    color: var(--brand-green);
+    transition: color .3s ease;
+
+    &:hover {
+        color: var(--up-green);
+    }
+}
+
+.linksContainer {
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+
+    & > :last-child {
+        margin-left: 2rem;
+    }
+}
+
+.navLink {
+    color: var(--up-black);
+    font-size: 1.8rem;
+    transition: color .3s ease;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: red;
+        background-image: linear-gradient(to right, var(--up-lime), var(--up-green));
+        border-radius: 2px;
+        left: 50%;
+        bottom: -1.5rem;
+        width: 8.5rem;
+        height: 2px;
+        transform: translateX(-50%);
+        scale: 0;
+        transition: scale .5s ease;
+    }
+
+    &:hover {
+        color: var(--up-green);
+    }
+}
+
+.activeLink {
+    color: var(--up-green);
+
+    &::after {
+        scale: 1;
+    }
+}
