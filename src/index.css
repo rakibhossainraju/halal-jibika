@@ -57,6 +57,25 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     min-height: 100vh;
+    overflow-x: hidden;
+    scrollbar-gutter: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--brand-green);
+    border-radius: 15px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--up-green);
 }
 
 header,

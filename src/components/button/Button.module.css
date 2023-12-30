@@ -24,6 +24,7 @@
 
 .outlined {
     composes: base-btn;
+    background-color: var(--white);
     border: 2px solid var(--brand-green);
     color: var(--brand-green);
 }
