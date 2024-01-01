@@ -1,0 +1,29 @@
+.footerSection {
+    background-color: var(--forest);
+    background-image: radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, 0.08) 99%),
+    radial-gradient(closest-side, transparent 98%, rgba(0, 0, 0, 0.08) 99%);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+    padding: 5rem 2rem;
+
+}
+
+.footerLogo {
+    composes: navLogo from "../navbar/Navbar.module.css";
+    color: var(--mint);
+    font-size: 4rem;
+}
+
+.footerLinksContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+
+.copyRight {
+    color: var(--gray-60);
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    margin-block: 6rem 0;
+}
