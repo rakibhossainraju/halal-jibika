@@ -1,0 +1,68 @@
+.newsLatter {
+    background-image: url("https://img.freepik.com/premium-photo/fern-leaves-dark-background-jungle-dense-dark-green-fern-leaves-garden-night-nature-abstract-background-fern-tropical-forest-exotic-plant_33867-774.jpg?w=826");
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    background-size: cover;
+    margin: 10rem auto;
+    max-width: 120rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 5px;
+    padding-block: 10rem;
+    margin-inline: auto;
+    backdrop-filter: blur(2px);
+
+    & h2 {
+        font-family: var(--family-playfair-display);
+        text-transform: uppercase;
+        font-size: 6rem;
+        text-align: center;
+        color: var(--gray-08);
+    }
+
+    & h3 {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        text-align: center;
+        color: var(--gray-08);
+    }
+
+    & form {
+        display: flex;
+        margin-top: 3rem;
+
+        & input {
+            border: none;
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.25);
+            color: var(--white);
+            border-radius: 2px 0 0 2px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            font-size: 2rem;
+            padding: 2rem 5rem;
+            width: 55rem;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.87);
+            }
+        }
+
+        & button {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-radius: 0 2px 2px 0;
+            padding-right: 2rem;
+
+            & img {
+                max-width: 3rem;
+            }
+        }
+    }
+}

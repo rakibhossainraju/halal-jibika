@@ -58,7 +58,7 @@ body {
     font-size: 1.6rem;
     min-height: 100vh;
     /*overflow-x: hidden;*/
-    scrollbar-gutter: stable;
+    /*scrollbar-gutter: stable;*/
 }
 
 body::-webkit-scrollbar {

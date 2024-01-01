@@ -1,5 +1,13 @@
 :root {
     --black: #000;
+    --gray-01: #5e6d55;
+    --gray-02: #9aaa97;
+    --gray-03: #beccbe;
+    --gray-04: #d5e0d5;
+    --gray-05: #e4ebe4;
+    --gray-06: #f2f7f2;
+    --gray-07: #f7faf7;
+    --gray-08: #D2E3C8;
     --gray-10: #1c2d1c;
     --gray-15: #1f321f;
     --gray-20: #2a3b2c;
@@ -46,8 +54,14 @@
     --orange-red-hc: #992d16;
     --pink: #f66dbc;
     --pink-hc: #853b67;
-    --lilac: #bda1e7;
+    --lilac: rgba(189, 161, 231, 0.74);
     --lilac-hc: #5b4d6f;
     --heather: #a18085;
     --heather-hc: #644f52;
+}
+
+:root {
+    --family-el-messiri: 'El Messiri', sans-serif;
+    --family-spen-sans: 'Open Sans', sans-serif;
+    --family-playfair-display: 'Playfair Display SC', serif;
 }
