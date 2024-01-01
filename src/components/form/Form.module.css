@@ -1,0 +1,25 @@
+.formContainer {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 2rem 4rem 3rem;
+    margin: 1.5rem auto;
+    max-width: 52rem;
+
+    & button {
+        border-radius: 3px;
+        margin-top: 2rem;
+        width: 100%;
+    }
+}
+
+.formTitle {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 4.7rem;
+    color: var(--up-green);
+    text-align: center;
+
+    & span {
+        color: transparent;
+        -webkit-text-stroke: 2px var(--up-green);
+    }
+}

@@ -1,0 +1,33 @@
+.inputLabel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    & span {
+        color: var(--gray-40);
+        font-size: 1.8rem;
+    }
+
+    &:has(input:focus) {
+        & span {
+            color: var(--up-green);
+            transition: color .5s ease;
+        }
+    }
+}
+
+
+.input {
+    border: 1px solid var(--gray-50);
+    border-radius: 3px;
+    padding-block: .8rem;
+    padding-inline: 1rem 2rem;
+    font-size: 1.7rem;
+
+    &:focus {
+        outline: 1px solid var(--up-green);
+        transition: outline .5s ease;
+    }
+}
+

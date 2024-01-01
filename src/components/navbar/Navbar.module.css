@@ -1,4 +1,4 @@
-@import "../../variables.module.css";
+@import "../../css utils/variables.module.css";
 
 .navContainer {
     display: flex;
@@ -38,7 +38,6 @@
     &::after {
         content: "";
         position: absolute;
-        background-color: red;
         background-image: linear-gradient(to right, var(--up-lime), var(--up-green));
         border-radius: 2px;
         left: 50%;
