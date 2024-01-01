@@ -1,0 +1,14 @@
+.pageNotFound {
+    position: relative;
+    overflow-y: hidden;
+    height: 60rem;
+    margin: auto;
+    max-width: 75rem;
+
+    & img {
+        max-width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -7rem;
+    }
+}

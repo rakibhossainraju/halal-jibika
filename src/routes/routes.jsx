@@ -6,6 +6,7 @@ import ContentPage from "../pages/content/ContentPage.jsx";
 import FavoritePage from "../pages/favorite/FavoritePage.jsx";
 import AboutPage from "../pages/about/AboutPage.jsx";
 import AuthPage from "../pages/auth/AuthPage.jsx";
+import NotFound from "../components/not-found/NotFound.jsx";
 
 export const routes = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const routes = createBrowserRouter([
       {
         path: "/auth",
         element: <AuthPage />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
