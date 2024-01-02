@@ -51,7 +51,9 @@ const AuthPage = () => {
                 name="password"
               />
             )}
-            <ButtonComponent>Sign Up</ButtonComponent>
+            <ButtonComponent>
+              {hasAccount ? "Sign up" : "Sign in"}
+            </ButtonComponent>
           </FormComponent>{" "}
           <button
             className={formToggleBtn}

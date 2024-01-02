@@ -1,0 +1,63 @@
+.jobsHeaderSection {
+    --_margin-left: 6rem;
+
+    background: url("assets/images/shape.svg") no-repeat top left;
+    background-position: -45rem -30rem;
+    background-size: 80rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    animation: animateBgi 1.5s ease;
+    overflow-x: hidden;
+
+    & div {
+        margin-top: -5rem;
+    }
+
+    & h2 {
+        color: var(--up-black-dark);
+        font-size: 8rem;
+        font-family: var(--family-el-messiri);
+        margin-left: var(--_margin-left);
+        margin-bottom: 2rem;
+    }
+
+    & p {
+        color: var(--gray-10);
+        font-size: 3rem;
+        margin-left: var(--_margin-left);
+    }
+
+    & img {
+        max-width: 50rem;
+        transform: scaleX(-1) translateX(-1rem);
+    }
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--gray-80);
+    max-width: 96rem;
+    margin: 5rem auto;
+}
+
+@keyframes animateBgi {
+    0% {
+        background-size: 0;
+    }
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    & h4 {
+        font-size: 3rem;
+        font-weight: 400;
+        color: var(--gray-45);
+    }
+}

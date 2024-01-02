@@ -6,6 +6,7 @@
     justify-content: space-between;
     gap: 2rem;
     max-width: 95%;
+    min-height: 30rem;
     margin: 3rem auto;
 }
 

@@ -35,7 +35,7 @@ const company = [
   },
   {
     name: "Contact",
-    path: "",
+    path: "/contact",
   },
 ];
 const support = [
