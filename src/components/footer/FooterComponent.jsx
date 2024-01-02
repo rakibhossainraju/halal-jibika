@@ -66,9 +66,9 @@ const FooterComponent = () => {
               Halal Jibika
             </Link>
             <div>
-              <Link>Face Book</Link>
-              <Link>Twitter</Link>
-              <Link>Github</Link>
+              <Link to={""}>Face Book</Link>
+              <Link to={""}>Twitter</Link>
+              <Link to={""}>Github</Link>
             </div>
           </div>
           <ULComponent title="Services" lists={services} />

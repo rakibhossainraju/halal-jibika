@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 import JobsPage from "../pages/jobs/JobsPage.jsx";
 import HomePage from "../pages/home/HomePage.jsx";
-import ContentPage from "../pages/content/ContentPage.jsx";
+import ContactPage from "../pages/contact/ContactPage.jsx";
 import FavoritePage from "../pages/favorite/FavoritePage.jsx";
 import AboutPage from "../pages/about/AboutPage.jsx";
 import AuthPage from "../pages/auth/AuthPage.jsx";
@@ -22,8 +22,8 @@ export const routes = createBrowserRouter([
         element: <JobsPage />,
       },
       {
-        path: "/content",
-        element: <ContentPage />,
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/favorite,",
