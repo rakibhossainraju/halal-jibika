@@ -12,7 +12,7 @@ export const navLinks = [
     name: "Contact",
   },
   {
-    path: "/favorite,",
+    path: "/favorite",
     name: "Favorite",
   },
   {

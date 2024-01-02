@@ -7,6 +7,7 @@ import FavoritePage from "../pages/favorite/FavoritePage.jsx";
 import AboutPage from "../pages/about/AboutPage.jsx";
 import AuthPage from "../pages/auth/AuthPage.jsx";
 import NotFound from "../components/not-found/NotFound.jsx";
+import JobDetailsPage from "../pages/job-details/JobDetailsPage.jsx";
 
 export const routes = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ export const routes = createBrowserRouter([
         element: <ContactPage />,
       },
       {
-        path: "/favorite,",
+        path: "/favorite",
         element: <FavoritePage />,
       },
       {

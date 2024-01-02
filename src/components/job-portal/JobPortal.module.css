@@ -1,0 +1,40 @@
+.portalSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 23rem;
+    margin-block: 5rem 7rem;
+
+    & h3 {
+        color: var(--up-black-dark);
+        font-size: 5.4rem;
+        font-family: var(--family-el-messiri);
+        font-weight: 600;
+    }
+
+    & p {
+        font-size: 2.6rem;
+        font-weight: 300;
+        color: var(--gray-40);
+    }
+}
+
+.btnContainer {
+    display: flex;
+    gap: 2.5rem;
+
+}
+
+.outlinedBtn {
+    composes: outlined from "../button/Button.module.css";
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 1.5rem;
+}
+
+.filledBtn {
+    composes: filled from "../button/Button.module.css";
+    border-radius: 5px;
+    font-weight: 500;
+
+}

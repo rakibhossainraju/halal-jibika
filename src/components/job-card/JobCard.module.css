@@ -1,0 +1,135 @@
+.jobCard {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 110rem;
+    padding: 4rem 2rem;
+    outline: 1px solid rgba(2, 84, 2, 0.18);
+    cursor: pointer;
+}
+
+.jobLogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    & img {
+        width: 6rem;
+        aspect-ratio: 1;
+    }
+
+    & h5 {
+        color: #00bf58;
+        font-size: 1.7rem;
+        font-weight: 600;
+        line-height: 1.6;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & h3 {
+        color: var(--black);
+        font-size: 2rem;
+        font-weight: 600;
+    }
+}
+
+
+.location {
+    line-height: 1.9;
+    font-size: 1.8rem;
+    font-weight: 200;
+    color: var(--gray-55);
+}
+
+.extraDetails {
+    color: var(--gray-60);
+    font-size: 1.8rem;
+    font-weight: 200;
+}
+
+.price {
+    color: var(--gray-10);
+    font-weight: 600;
+}
+
+.cardButtonContainer {
+    display: flex;
+    gap: 2rem;
+}
+
+.bookmarkBtn {
+    --_border-color: var(--gray-60);
+    background-color: transparent;
+    border: 1px solid var(--_border-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    aspect-ratio: 1;
+    transition: all .8s ease;
+    position: relative;
+
+    &.remove {
+        background-color: var(--up-green);
+
+        &:hover {
+            background-color: var(--up-green);
+        }
+
+        & svg {
+            fill: var(--white);
+        }
+    }
+
+    &:hover {
+        --_border-color: var(--brand-green-hc);
+        background-color: rgba(54, 152, 54, 0.23);
+        border-color: transparent;
+
+        &::after {
+            scale: 1;
+            opacity: 1;
+        }
+
+        &.save::after {
+            content: "Save jobe";
+        }
+
+        &.remove::after {
+            content: "Remove jobe";
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -4rem;
+        background-color: rgba(153, 227, 166, 0.6);
+        color: var(--up-black-dark);
+        border-radius: 5px;
+        font-size: .8rem;
+        font-weight: 600;
+        padding: 1rem;
+        width: 7rem;
+        z-index: -1;
+        transition: all .5s ease;
+        scale: 0;
+        opacity: 0;
+    }
+
+    & svg {
+        fill: var(--_border-color);
+        transition: fill 0.8s ease;
+    }
+}
+
+.applyBtn {
+    composes: filled from "../button/Button.module.css";
+    padding: 0 3rem;
+}

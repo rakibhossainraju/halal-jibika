@@ -1,0 +1,60 @@
+.jobDetailsHeaderSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.8;
+    min-height: 30rem;
+
+    & h3 {
+        color: var(--up-black-dark);
+        font-size: 5.5rem;
+        font-family: var(--family-el-messiri);
+    }
+
+    & h5 {
+        color: var(--up-black-dark);
+        font-size: 2.6rem;
+        font-weight: 400;
+        max-width: 60rem;
+    }
+}
+
+.jobDetailsSection {
+    min-height: 50rem;
+    background-color: var(--gray-90);
+    border-radius: 50px 50px 0 0;
+    padding: 2rem;
+}
+
+.jobPostedDate {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gray-20);
+
+    & span {
+        font-weight: 500;
+        color: var(--up-black-dark);
+    }
+}
+
+.jobPostTitle {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--up-black-dark);
+    margin-block: 1rem 2rem;
+}
+
+.overview {
+    border-radius: 20px;
+    outline: 1px solid var(--up-black);
+    padding: 4.5rem;
+    max-width: 70rem;
+
+    & p {
+        font-size: 1.9rem;
+        font-weight: 300;
+        line-height: 1.7;
+    }
+}

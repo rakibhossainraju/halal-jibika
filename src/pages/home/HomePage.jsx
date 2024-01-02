@@ -10,6 +10,7 @@ import {
 } from "./HomePage.module.css";
 import ButtonComponent from "../../components/button/ButtonComponent.jsx";
 import { useNavigate } from "react-router-dom";
+import JobPortal from "../../components/job-portal/JobPortal.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -40,9 +41,9 @@ const HomePage = () => {
       <img
         style={{ maxWidth: "50rem" }}
         src="/assets/images/background.svg"
-        // src="/assets/images/meating.svg"
         alt=""
       />
+      <JobPortal />
     </>
   );
 };
