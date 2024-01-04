@@ -4,9 +4,16 @@
     justify-content: space-between;
     align-items: center;
     width: 110rem;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     outline: 1px solid rgba(2, 84, 2, 0.18);
-    cursor: pointer;
+    backface-visibility: hidden;
+    transition: transform 0.25s ease, box-shadow 0.4s ease;
+
+    &:hover {
+        transform: translateY(-.2rem) scale(1.02);
+        box-shadow: rgba(32, 32, 59, 0.16) 0 30px 100px -20px, rgba(0, 0, 0, 0.2) 0 30px 30px -30px;
+    }
+
 }
 
 .jobLogoContainer {
@@ -25,6 +32,7 @@
         font-size: 1.7rem;
         font-weight: 600;
         line-height: 1.6;
+        cursor: pointer;
 
         &:hover {
             text-decoration: underline;
@@ -35,6 +43,7 @@
         color: var(--black);
         font-size: 2rem;
         font-weight: 600;
+        cursor: pointer;
     }
 }
 
@@ -44,12 +53,14 @@
     font-size: 1.8rem;
     font-weight: 200;
     color: var(--gray-55);
+    cursor: pointer;
 }
 
 .extraDetails {
     color: var(--gray-60);
     font-size: 1.8rem;
     font-weight: 200;
+    cursor: pointer;
 }
 
 .price {

@@ -1,31 +1,67 @@
+
+.detailsPageSection {
+    background-color: rgba(103, 255, 0, 0.19);
+    /*padding-inline: 2rem;*/
+}
+
 .jobDetailsHeaderSection {
     display: flex;
     align-items: center;
+    background-image: url("/assets/images/flower.png"), url("/assets/images/rotated-flower.png");
+    background-repeat: no-repeat;
+    background-position: -6rem 10rem, 97rem -18rem;
+    background-size: 48rem auto;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     line-height: 1.8;
-    min-height: 30rem;
+    min-height: 52rem;
+    animation: animateBgiToTop 1.7s ease;
 
     & h3 {
-        color: var(--up-black-dark);
-        font-size: 5.5rem;
+        color: var(--up-green-hc);
+        font-size: 6.5rem;
         font-family: var(--family-el-messiri);
     }
 
     & h5 {
-        color: var(--up-black-dark);
-        font-size: 2.6rem;
+        color: var(--up-green-hc);
+        font-size: 2.4rem;
         font-weight: 400;
+        font-style: italic;
         max-width: 60rem;
     }
 }
 
+.socialLinksContainer {
+    margin-block: 3rem 5rem;
+
+    & a {
+        padding: .5rem 3rem;
+        background-color: rgba(103, 255, 0, 0.25);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--up-green-hc);
+        border-radius: 5px;
+        margin-right: 1rem;
+        transition: background-color 0.5s ease;
+
+        &:hover {
+            background-color: rgba(50, 217, 14, 0.46);
+        }
+    }
+}
+
 .jobDetailsSection {
-    min-height: 50rem;
-    background-color: var(--gray-90);
+    background-color: var(--white);
+    box-shadow: 0 -10px 1.5rem 1rem rgba(29, 98, 18, 0.03);
     border-radius: 50px 50px 0 0;
-    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    padding-block: 12rem 5rem;
+    min-height: 50rem;
+    counter-reset: requirement-counter;
 }
 
 .jobPostedDate {
@@ -35,26 +71,98 @@
 
     & span {
         font-weight: 500;
-        color: var(--up-black-dark);
+        color: var(--up-green-hc);
     }
 }
 
 .jobPostTitle {
     font-size: 3.5rem;
     font-weight: 600;
-    color: var(--up-black-dark);
-    margin-block: 1rem 2rem;
+    color: var(--up-green-hc);
+    margin-block: 0.5rem 2rem;
 }
 
 .overview {
     border-radius: 20px;
-    outline: 1px solid var(--up-black);
+    outline: 1px solid #266900;
     padding: 4.5rem;
-    max-width: 70rem;
+    margin-bottom: 4rem;
+    max-width: 78rem;
+
+    & h5 {
+        font-size: 2.7rem;
+        font-weight: 600;
+        color: var(--up-green-hc);
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        &:before {
+            counter-increment: requirement-counter;
+            content: counter(requirement-counter);
+            color: white;
+            background-color: #46ad02;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-right: 0.8rem;
+            width: 2.8rem;
+            aspect-ratio: 1;
+        }
+    }
 
     & p {
         font-size: 1.9rem;
         font-weight: 300;
         line-height: 1.7;
+        color: var(--gray-10);
+    }
+}
+
+
+.jobDescription {
+    composes: overview;
+
+    & > :last-child {
+        margin-top: 2rem;
+    }
+}
+
+.responsibilities {
+    composes: overview;
+
+    & ul {
+        padding-inline: 2rem 0rem;
+
+        & > :not(:last-child) {
+            margin-bottom: 1.7rem;
+        }
+    }
+
+    & li {
+        list-style-image: url("/assets/images/check-mark.svg");
+        color: #2a8300;
+    }
+}
+
+.requiredSkills {
+    composes: responsibilities;
+
+    & li {
+        list-style-image: none;
+        list-style-type: disc;
+    }
+}
+
+.benefits {
+    composes: requiredSkills;
+}
+
+@keyframes animateBgiToTop {
+    0% {
+        background-position: 3rem 50rem, 120rem -50rem;
     }
 }
