@@ -11,6 +11,7 @@ import {
 import ButtonComponent from "../../components/button/ButtonComponent.jsx";
 import { useNavigate } from "react-router-dom";
 import JobPortal from "../../components/job-portal/JobPortal.jsx";
+import CategoryComponent from "../../components/category/CategoryComponent.jsx";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -43,6 +44,7 @@ const HomePage = () => {
         src="/assets/images/background.svg"
         alt=""
       />
+      <CategoryComponent />
       <JobPortal />
     </>
   );

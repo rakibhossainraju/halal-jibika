@@ -21,7 +21,7 @@ const JobCardComponent = () => {
         </p>
       </div>
       <div className={style.cardButtonContainer}>
-        <button className={style.bookmarkBtn + " " + style.save}>
+        <button className={style.bookmarkBtn + " " + style.remove}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="17"

@@ -1,13 +1,14 @@
 .jobsHeaderSection {
     --_margin-left: 6rem;
 
-    background: url("assets/images/shape.svg") no-repeat top left;
+    background: url("/assets/images/shape.svg") no-repeat top left;
     background-position: -45rem -30rem;
     background-size: 80rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    min-height: 50rem;
     animation: animateBgi 1.5s ease;
     overflow-x: hidden;
 

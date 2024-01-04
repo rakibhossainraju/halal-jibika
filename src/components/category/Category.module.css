@@ -1,0 +1,123 @@
+.categoriesSection {
+    background-color: var(--lime-light);
+
+}
+
+.categoriesTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    & h2 {
+        font-size: 5.5rem;
+        font-weight: 700;
+        font-family: var(--family-el-messiri);
+        color: var(--up-black);
+        max-width: 50rem;
+        background-image: url("https://jobi-nextjs.vercel.app/_next/static/media/shape_04.73aa37f7.svg");
+        background-repeat: no-repeat;
+        background-position: 40.5rem 6rem;
+        padding-block: 10rem;
+    }
+
+    & p {
+        color: var(--up-green-hc);
+        font-size: 2.2rem;
+        line-height: 2;
+        margin-bottom: 2.5rem;
+        max-width: 50rem;
+    }
+
+    & a {
+        border-bottom: 1px solid;
+        color: var(--brand-green);
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding-bottom: .5rem;
+        display: inline-block;
+        transition: color .2s ease;
+
+        &:hover {
+            color: var(--up-sky);
+        }
+    }
+}
+
+.categoriesCards {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 10rem;
+}
+
+.categoryCard {
+    background-color: var(--white);
+    border-radius: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-block: 1rem;
+    width: 20rem;
+    aspect-ratio: 1;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    &:after {
+        content: "";
+        position: absolute;
+        background-color: var(--up-lime-hc);
+        border-radius: 50%;
+        width: 100%;
+        aspect-ratio: 1;
+        scale: 0;
+        left: -10rem;
+        bottom: -10rem;
+        transition: all 0.4s ease-out;
+        z-index: -1;
+    }
+
+    &:hover {
+        translate: 0 -1.5rem;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+        &:after {
+            scale: 2.4;
+        }
+
+        & h4 {
+            color: var(--white);
+        }
+
+        & img {
+            filter: brightness(50);
+        }
+
+        & p {
+            color: var(--white);
+        }
+    }
+
+
+    & img {
+        width: 3rem;
+    }
+
+    & h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--gray-40);
+    }
+
+    & p {
+        color: var(--gray-02);
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+}

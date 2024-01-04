@@ -1,0 +1,85 @@
+.JobDetailCard {
+    background-color: var(--lime-light);
+    border-radius: 20px;
+    padding-inline: 3rem;
+    width: 35rem;
+    max-height: 65rem;
+}
+
+.logoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-block: 4rem;
+
+    & p {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    & button {
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 0.8rem 2.5rem;
+        background-color: var(--forest);
+
+        &:hover {
+            background-color: #1b7a71;
+        }
+    }
+}
+
+.divider {
+    max-width: 70%;
+    border: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.29);
+    margin: 3rem auto;
+}
+
+.detailsContainer {
+    & button {
+        background-color: var(--up-lime-hc);
+        color: var(--white);
+        font-weight: 600;
+        width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+.textContainer {
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+
+    & h6 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    & p {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+}
+
+.categoriesContainer {
+    margin-block: 1rem;
+
+    & a {
+        font-size: 1.3rem;
+        font-weight: 500;
+        outline: 1px solid var(--up-green-hc);
+        border-radius: 20px;
+        padding: .2rem 2rem .5rem;
+        margin-right: 1.2rem;
+        transition: all 1s ease;
+
+        &:hover {
+            background-color: var(--up-lime);
+            outline-color: transparent;
+        }
+    }
+}
