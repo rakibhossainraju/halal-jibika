@@ -1,5 +1,6 @@
 import style from "./JobCard.module.css";
 import ButtonComponent from "../button/ButtonComponent.jsx";
+import { Link } from "react-router-dom";
 
 const JobCardComponent = () => {
   return (
@@ -10,14 +11,22 @@ const JobCardComponent = () => {
           alt="company logo"
         />
         <div>
-          <h5>Full time</h5>
-          <h3>Developer & expert in...</h3>
+          <h5>
+            <Link to={"/jobs/details"}>Full time</Link>
+          </h5>
+          <h3>
+            <Link to={"/jobs/details"}>Developer & expert in...</Link>
+          </h3>
         </div>
       </div>
       <div>
-        <p className={style.location}>Spain, Barcelona</p>
+        <p className={style.location}>
+          <Link to={"/jobs/details"}>Spain, Barcelona</Link>
+        </p>
         <p className={style.extraDetails}>
-          <span className={style.price}>$900</span> / Monthly . Fresher
+          <Link to={"/jobs/details"}>
+            <span className={style.price}>$900</span> / Monthly . Fresher
+          </Link>
         </p>
       </div>
       <div className={style.cardButtonContainer}>

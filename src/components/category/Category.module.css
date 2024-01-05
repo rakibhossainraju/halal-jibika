@@ -1,5 +1,6 @@
 .categoriesSection {
     background-color: var(--lime-light);
+    padding-block: 5rem 20rem;
 
 }
 
@@ -50,7 +51,6 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding-bottom: 10rem;
 }
 
 .categoryCard {
@@ -64,10 +64,10 @@
     padding-block: 1rem;
     width: 20rem;
     aspect-ratio: 1;
-    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    transition: all .4s ease;
 
     &:after {
         content: "";
@@ -84,8 +84,8 @@
     }
 
     &:hover {
-        translate: 0 -1.5rem;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        translate: 0 -1.2rem;
 
         &:after {
             scale: 2.4;

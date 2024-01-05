@@ -44,6 +44,11 @@
         font-size: 2rem;
         font-weight: 600;
         cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+        }
     }
 }
 
@@ -54,6 +59,10 @@
     font-weight: 200;
     color: var(--gray-55);
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .extraDetails {
@@ -61,6 +70,10 @@
     font-size: 1.8rem;
     font-weight: 200;
     cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .price {

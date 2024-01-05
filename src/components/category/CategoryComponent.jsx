@@ -1,4 +1,5 @@
 import style from "./Category.module.css";
+import { Link } from "react-router-dom";
 
 const CategoryComponent = () => {
   return (
@@ -10,16 +11,20 @@ const CategoryComponent = () => {
             Together with useful notifications, collaboration, insights, and
             improvement tip lorem etc.
           </p>
-          <a href="#">Explore all fields {">"}</a>
+          <Link key={name} to={"/jobs/#jobs-section"}>
+            Explore all fields {">"}
+          </Link>
         </div>
       </div>
       <div className={style.categoriesCards}>
         {categoriesDetails.map(({ name, icon, jobs }) => (
-          <div key={name} className={style.categoryCard}>
-            <img src={icon} alt={name} />
-            <h4>{name}</h4>
-            <p>{jobs}k+ Jobs</p>
-          </div>
+          <Link key={name} to={"/jobs/#jobs-section"}>
+            <div className={style.categoryCard}>
+              <img src={icon} alt={name} />
+              <h4>{name}</h4>
+              <p>{jobs}k+ Jobs</p>
+            </div>
+          </Link>
         ))}
       </div>
     </section>

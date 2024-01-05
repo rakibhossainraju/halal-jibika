@@ -13,7 +13,7 @@ const JobsPage = () => {
         <img src="/assets/images/jobs.svg" alt="Jobs svg" />
       </section>
       <hr style={{ marginTop: 0 }} className={style.divider} />
-      <section className={style.cardsContainer}>
+      <section id="jobs-section" className={style.cardsContainer}>
         <h4>All jobs</h4>
         <JobCardComponent />
         <JobCardComponent />
