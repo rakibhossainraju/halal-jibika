@@ -1,5 +1,9 @@
 .JobDetailCard {
+<<<<<<< HEAD
     background-color: var(--lime-light);
+=======
+    background-color: rgba(103, 255, 0, 0.25);
+>>>>>>> origin/main
     border-radius: 20px;
     padding-inline: 3rem;
     width: 35rem;
@@ -40,8 +44,13 @@
 
 .detailsContainer {
     & button {
+<<<<<<< HEAD
         background-color: var(--up-lime-hc);
         color: var(--white);
+=======
+        background-color: #77ef26;
+        color: #ffffff;
+>>>>>>> origin/main
         font-weight: 600;
         width: 100%;
         margin-top: 2rem;
@@ -74,7 +83,11 @@
         outline: 1px solid var(--up-green-hc);
         border-radius: 20px;
         padding: .2rem 2rem .5rem;
+<<<<<<< HEAD
         margin-right: 1.2rem;
+=======
+        margin-right: 2rem;
+>>>>>>> origin/main
         transition: all 1s ease;
 
         &:hover {
