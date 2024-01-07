@@ -8,7 +8,9 @@
     font-size: 1.6rem;
     font-weight: 600;
     padding: 1.1rem 2.5rem 1.2rem;
-    text-align-last: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color .6s ease;
 }
 
@@ -33,4 +35,29 @@
     composes: base-btn;
     background-color: var(--white);
     color: var(--forest);
+}
+
+.btnSpinner {
+    display: inline-block;
+    width: 3rem;
+    aspect-ratio: 1;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    border-top-color: rgba(220, 220, 220, 0.56);
+    animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.btnDisabled {
+    background-color: var(--gray-15);
+
+    &:hover {
+        background-color: var(--gray-15);
+        cursor: default;
+    }
 }

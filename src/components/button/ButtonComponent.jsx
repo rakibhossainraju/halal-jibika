@@ -1,4 +1,10 @@
-import { filled, outlined, white } from "./Button.module.css";
+import {
+  filled,
+  outlined,
+  white,
+  btnDisabled,
+  btnSpinner,
+} from "./Button.module.css";
 
 export const BUTTON_TYPE_CLASSES = {
   filled,
@@ -8,12 +14,17 @@ export const BUTTON_TYPE_CLASSES = {
 
 const ButtonComponent = ({
   buttonType = BUTTON_TYPE_CLASSES.filled,
+  isLoading,
   children,
   ...otherProps
 }) => {
   return (
-    <button className={buttonType} {...otherProps}>
-      {children}
+    <button
+      disabled={!!isLoading}
+      className={`${buttonType}  ${isLoading ? btnDisabled : ""}`}
+      {...otherProps}
+    >
+      {isLoading ? <span className={btnSpinner} /> : children}
     </button>
   );
 };

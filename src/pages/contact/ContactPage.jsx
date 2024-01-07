@@ -45,7 +45,6 @@ const ContactPage = () => {
       <section className={style.mapSection}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14606.014700696616!2d90.4333882!3d23.7650722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7d5e2055259%3A0xef380c39c46ee1ba!2sAs-Sunnah%20Foundation!5e0!3m2!1sen!2sbd!4v1704164933666!5m2!1sen!2sbd"
-          allowFullScreen="true"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

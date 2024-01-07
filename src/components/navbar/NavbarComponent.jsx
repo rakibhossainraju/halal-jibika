@@ -10,9 +10,12 @@ import ButtonComponent, {
   BUTTON_TYPE_CLASSES,
 } from "../button/ButtonComponent.jsx";
 import { navLinks } from "../../routes/nav-links.js";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../utility/firebase.js";
 
 const NavbarComponent = () => {
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
   return (
     <nav className={navContainer}>
       <Link className={navLogo} to="/">
@@ -20,14 +23,16 @@ const NavbarComponent = () => {
       </Link>
       <ul className={linksContainer}>
         {navLinks.map((link) => {
-          if (link.name === "Sign Up" || link.name === "Profile")
+          if (link.name === "Sign Up")
             return (
               <li key={link.name}>
                 <ButtonComponent
                   buttonType={BUTTON_TYPE_CLASSES.filled}
-                  onClick={() => navigate(link.path)}
+                  onClick={() => navigate(user ? "/profile" : link.path)}
                 >
-                  {link.name}
+                  {localStorage.getItem("isLoggedIn") === "true"
+                    ? "Profile"
+                    : link.name}
                 </ButtonComponent>
               </li>
             );

@@ -29,3 +29,23 @@
 
 Note: Ensure proper data relationships in the database schema to associate jobs with users, track favourites, and manage applications.
 */
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+  signOut,
+} from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: "halal-jibika-c0499.firebaseapp.com",
+  projectId: "halal-jibika-c0499",
+  storageBucket: "halal-jibika-c0499.appspot.com",
+  messagingSenderId: "958809224045",
+  appId: "1:958809224045:web:314625886dfb3873e76064",
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);

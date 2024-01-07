@@ -8,6 +8,8 @@ import AboutPage from "../pages/about/AboutPage.jsx";
 import AuthPage from "../pages/auth/AuthPage.jsx";
 import NotFound from "../components/not-found/NotFound.jsx";
 import JobDetailsPage from "../pages/job-details/JobDetailsPage.jsx";
+import PrivateRoute from "./PrivateRoute.jsx";
+import ProfilePage from "../pages/profile/ProfilePage.jsx";
 
 export const routes = createBrowserRouter([
   {
@@ -40,7 +42,17 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/auth",
-        element: <AuthPage />,
+        element: (
+          <PrivateRoute
+            path="/profile"
+            shouldRender={true}
+            component={AuthPage}
+          />
+        ),
+      },
+      {
+        path: "/profile",
+        element: <PrivateRoute path="/auth" component={ProfilePage} />,
       },
       {
         path: "*",
