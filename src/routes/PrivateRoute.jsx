@@ -13,7 +13,7 @@ const PrivateRoute = ({
   user && localStorage.setItem("isLoggedIn", "true");
 
   const condition = shouldRender
-    ? localStorage.getItem("isLoggedIn") === "false"
+    ? localStorage.getItem("isLoggedIn") !== "true"
     : user;
   return condition ? (
     <Component {...rest} />
