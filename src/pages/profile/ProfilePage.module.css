@@ -1,0 +1,95 @@
+.profilePage {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.sideBarSection {
+    width: 35rem;
+    height: 90vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    --ms-scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-block: 3rem 4rem;
+
+    & img {
+        border-radius: 50%;
+        width: 8rem;
+        aspect-ratio: 1;
+    }
+
+    & h3 {
+        color: var(--up-black);
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+}
+
+.sideNavigationContainer {
+    & li {
+        margin: 0 auto 1rem;
+        max-width: 22rem;
+
+        & a {
+            border-radius: 1.5rem;
+            color: var(--up-black);
+            display: flex;
+            align-items: center;
+            font-size: 1.7rem;
+            font-weight: 600;
+            gap: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        & .logout {
+            &:hover {
+                color: var(--brick);
+            }
+        }
+
+        & .activeLink {
+            color: white;
+            background-color: var(--up-green-hc);
+
+            & img {
+                filter: brightness(50);
+            }
+        }
+
+        & img {
+            width: 2.2rem;
+            aspect-ratio: 1;
+        }
+
+    }
+}
+
+.dynamicSection {
+    background-color: var(--gray-90);
+    border-top-left-radius: 5rem;
+    padding-block: 5rem 2rem;
+    padding-inline: 8rem 2rem;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    --ms-scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+

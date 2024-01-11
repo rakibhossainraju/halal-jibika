@@ -5,18 +5,16 @@ import { auth } from "../utility/firebase.js";
 const PrivateRoute = ({
   component: Component,
   path,
-  shouldRender,
+  shouldRenderIfNotAuthenticated,
   ...rest
 }) => {
   const [user] = useAuthState(auth);
-
   user && localStorage.setItem("isLoggedIn", "true");
-
-  const condition = shouldRender
+  const condition = shouldRenderIfNotAuthenticated
     ? localStorage.getItem("isLoggedIn") !== "true"
     : user;
   return condition ? (
-    <Component {...rest} />
+    <Component user={user} {...rest} />
   ) : (
     <Navigate to={path} replace={true} />
   );

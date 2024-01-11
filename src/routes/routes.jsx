@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import App from "../App.jsx";
 import JobsPage from "../pages/jobs/JobsPage.jsx";
 import HomePage from "../pages/home/HomePage.jsx";
@@ -9,7 +9,7 @@ import AuthPage from "../pages/auth/AuthPage.jsx";
 import NotFound from "../components/not-found/NotFound.jsx";
 import JobDetailsPage from "../pages/job-details/JobDetailsPage.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
-import ProfilePage from "../pages/profile/ProfilePage.jsx";
+import ProfilePage, { dynamicRoutes } from "../pages/profile/ProfilePage.jsx";
 
 export const routes = createBrowserRouter([
   {
@@ -45,7 +45,7 @@ export const routes = createBrowserRouter([
         element: (
           <PrivateRoute
             path="/profile"
-            shouldRender={true}
+            shouldRenderIfNotAuthenticated={true}
             component={AuthPage}
           />
         ),
@@ -53,6 +53,13 @@ export const routes = createBrowserRouter([
       {
         path: "/profile",
         element: <PrivateRoute path="/auth" component={ProfilePage} />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/profile/dashboard" replace={true} />,
+          },
+          ...dynamicRoutes,
+        ],
       },
       {
         path: "*",

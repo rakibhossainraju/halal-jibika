@@ -5,8 +5,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    max-width: 95%;
     min-height: 50rem;
+    padding-inline: 5rem;
     margin: 3rem auto;
 }
 

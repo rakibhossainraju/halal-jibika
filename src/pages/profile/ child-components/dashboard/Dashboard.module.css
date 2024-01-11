@@ -1,0 +1,94 @@
+.dashboardSection {
+}
+
+.title {
+    color: var(--up-black-dark);
+    font-size: 3.3rem;
+    font-weight: 600;
+    margin-bottom: 3.5rem;
+}
+
+.dashboardCards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.dashCardContainer {
+    position: relative;
+    isolation: isolate;
+    scale: 0.98;
+    width: 23rem;
+
+    &::after {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 2rem;
+        left: 50%;
+        bottom: -0.9rem;
+        translate: -50%;
+        width: 85%;
+        height: 10rem;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.dashCard {
+    background-color: var(--white);
+    box-shadow: rgba(149, 157, 165, 0.11) 0 8px 24px;
+    border-radius: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+
+    & h5 {
+        color: var(--up-black-dark);
+        font-weight: 600;
+        font-size: 3.1rem;
+    }
+
+    & p {
+        font-size: 2rem;
+        color: var(--gray-50);
+        font-weight: 300;
+    }
+
+
+}
+
+.dashCardImg {
+    background-color: var(--up-lime);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.5rem;
+    aspect-ratio: 1;
+}
+
+.profileViewsCard {
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    margin-top: 8rem;
+    width: 60rem;
+    height: 53rem;
+
+    & h3 {
+        color: rgba(0, 30, 0, 0.76);
+        font-size: 2.2rem;
+        font-weight: 600;
+        padding: 2.5rem 4rem;
+    }
+
+    & hr {
+        border: none;
+        border-top: 1px solid #80808034;
+    }
+
+    & img {
+        padding: 2rem 5rem 3rem;
+        height: 85%;
+    }
+}
