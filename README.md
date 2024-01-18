@@ -4,9 +4,7 @@ Hala Jibika is a job-hunting platform where users can discover job opportunities
 
 <a href="https://halal-jibika-22.netlify.app/" target="_blank"><img src="https://i.ibb.co/tXW58nK/site-preview.png" alt="site preview" /></a>
 
-
 # *[Halal Jibika Live Site](https://halal-jibika-22.netlify.app/)*
-# *[Source Code](https://github.com/rakibhossainraju/halal-jibika)*
 
 ## Overview
 
