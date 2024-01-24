@@ -1,15 +1,10 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { useEffect } from "react";
 import DashboardComponent from "./ child-components/dashboard/DashboardComponent.jsx";
 import { signOut } from "firebase/auth";
 import { auth } from "../../utility/firebase.js";
 import style from "./ProfilePage.module.css";
 
 const ProfilePage = ({ user }) => {
-  useEffect(() => {
-    document.querySelector("footer").style.display = "none";
-  }, []);
-  console.log(user);
   return (
     <main className={style.profilePage}>
       <section className={style.sideBarSection}>

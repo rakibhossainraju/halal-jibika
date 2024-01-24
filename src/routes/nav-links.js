@@ -20,6 +20,10 @@ export const navLinks = [
     name: "About",
   },
   {
+    path: "/post-job",
+    name: "Post Job",
+  },
+  {
     path: "/auth",
     name: "Sign Up",
   },

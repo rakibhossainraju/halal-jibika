@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "../App.jsx";
 import JobsPage from "../pages/jobs/JobsPage.jsx";
 import HomePage from "../pages/home/HomePage.jsx";
@@ -39,6 +39,10 @@ export const routes = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/post-job",
+        element: <PrivateRoute path="/auth" component={AboutPage} />,
       },
       {
         path: "/auth",
