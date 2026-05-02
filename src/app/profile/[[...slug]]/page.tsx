@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/utility/firebase";
@@ -67,21 +67,18 @@ const routeElements: { [key: string]: React.ReactNode } = {
   delete: <div className="text-[2rem]">This page is under construction</div>,
 };
 
-export default function ProfilePage({ params }: { params: { slug?: string[] } }) {
-  const pathname = usePathname();
+function ProfileContent({ slug }: { slug: string }) {
   const router = useRouter();
   const [user] = useAuthState(auth);
-  
-  const currentSlug = params.slug?.[0] || 'dashboard';
 
   return (
-    <main className="flex mt-4">
-      <section className="w-140 h-[90vh] overflow-y-auto no-scrollbar">
-        <div className="flex flex-col items-center justify-center gap-6 my-12 mb-16">
+    <main className="flex mt-[1rem]">
+      <section className="w-[35rem] h-[90vh] overflow-y-auto no-scrollbar">
+        <div className="flex flex-col items-center justify-center gap-[1.5rem] my-[3rem] mb-[4rem]">
           <img
             src={user?.photoURL || "https://picsum.photos/200/300"}
             alt="profile picture"
-            className="rounded-full w-32 aspect-square"
+            className="rounded-full w-[8rem] aspect-square"
           />
           <h3 className="text-up-black text-[2.5rem] font-semibold">
             {user?.displayName || "User Name"}
@@ -91,10 +88,10 @@ export default function ProfilePage({ params }: { params: { slug?: string[] } })
           <ul>
             {sidebarLinks.map((link) => {
               const isLogout = link.path === "logout";
-              const isActive = !isLogout && currentSlug === link.path;
+              const isActive = !isLogout && slug === link.path;
 
               return (
-                <li key={link.path} className="mx-auto mb-4 max-w-88">
+                <li key={link.path} className="mx-auto mb-[1rem] max-w-[22rem]">
                   {isLogout ? (
                     <button
                       onClick={async () => {
@@ -104,7 +101,7 @@ export default function ProfilePage({ params }: { params: { slug?: string[] } })
                         }
                         router.push("/");
                       }}
-                      className="w-full rounded-3xl text-up-black flex items-center font-semibold gap-4 p-8 transition-all duration-300 hover:text-brick"
+                      className="w-full rounded-[1.5rem] text-up-black flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 hover:text-brick"
                     >
                       <img src={link.icon} alt={link.name} className="w-[2.2rem] aspect-square" />
                       <p className="text-[1.7rem]">{link.name}</p>
@@ -112,7 +109,7 @@ export default function ProfilePage({ params }: { params: { slug?: string[] } })
                   ) : (
                     <Link
                       href={`/profile/${link.path}`}
-                      className={`rounded-3xl flex items-center font-semibold gap-4 p-8 transition-all duration-300 ${
+                      className={`rounded-[1.5rem] flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 ${
                         isActive ? 'text-white bg-up-green-hc [&_img]:brightness-50' : 'text-up-black'
                       }`}
                     >
@@ -126,8 +123,8 @@ export default function ProfilePage({ params }: { params: { slug?: string[] } })
           </ul>
         </div>
       </section>
-      <section className="bg-gray-90 rounded-tl-[5rem] py-20 px-32 pb-8 pr-8 w-full h-screen overflow-y-auto no-scrollbar">
-        {routeElements[currentSlug] || routeElements.dashboard}
+      <section className="bg-gray-90 rounded-tl-[5rem] py-[5rem] px-[8rem] pb-[2rem] pr-[2rem] w-full h-[100vh] overflow-y-auto no-scrollbar">
+        {routeElements[slug] || routeElements.dashboard}
       </section>
       
       <style jsx global>{`
@@ -141,4 +138,11 @@ export default function ProfilePage({ params }: { params: { slug?: string[] } })
       `}</style>
     </main>
   );
+}
+
+export default async function ProfilePage({ params }: { params: Promise<{ slug?: string[] }> }) {
+  const resolvedParams = await params;
+  const currentSlug = resolvedParams.slug?.[0] || 'dashboard';
+
+  return <ProfileContent slug={currentSlug} />;
 }
