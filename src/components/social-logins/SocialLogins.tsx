@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { auth } from "../../utility/firebase";
+import { auth } from "@/lib/firebase";
 import {
   useSignInWithFacebook,
   useSignInWithGoogle,

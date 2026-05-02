@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@router/customized';
 import Image from 'next/image';
 import ButtonComponent from "@/components/button/ButtonComponent";
 import JobPortal from "@/components/job-portal/JobPortal";

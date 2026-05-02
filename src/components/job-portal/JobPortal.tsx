@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@router/customized';
 import ButtonComponent, { BUTTON_TYPE_CLASSES } from "../button/ButtonComponent";
 
 interface JobPortalProps extends React.HTMLAttributes<HTMLElement> {

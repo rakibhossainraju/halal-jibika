@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { Link, useRouter } from '@router/customized';
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/utility/firebase";
+import { auth } from "@/lib/firebase";
 import DashboardComponent from "../DashboardComponent";
 
 const sidebarLinks = [

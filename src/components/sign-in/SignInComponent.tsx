@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { toast } from 'react-toastify';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from "../../utility/firebase";
+import { auth } from "@/lib/firebase";
 import FormComponent, { FormRef } from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';

@@ -6,7 +6,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from 'react-firebase-hooks/auth';
-import { auth } from "../../utility/firebase";
+import { auth } from "@/lib/firebase";
 import FormComponent, { FormRef } from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';

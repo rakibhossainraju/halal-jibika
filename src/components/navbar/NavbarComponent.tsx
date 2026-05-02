@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@router/customized';
 import { usePathname } from 'next/navigation';
 import ButtonComponent, { BUTTON_TYPE_CLASSES } from '../button/ButtonComponent';
 import { navLinks } from '../../routes/nav-links';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../utility/firebase';
+import { auth } from '@/lib/firebase';
 
 const NavbarComponent: React.FC = () => {
   const pathname = usePathname();

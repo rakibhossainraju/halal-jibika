@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@router/customized';
 import ButtonComponent, { BUTTON_TYPE_CLASSES } from "../button/ButtonComponent";
 
 const JobCardComponent: React.FC = () => {

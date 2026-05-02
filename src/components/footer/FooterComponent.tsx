@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@router/customized';
 import ULComponent from "../ul-component/ULComponent";
 
 const services = [
@@ -25,7 +25,7 @@ const support = [
 
 const FooterComponent: React.FC = () => {
   return (
-    <footer className="bg-forest bg-[radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%),radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%)] bg-size-[80px_80px] bg-size-[0_0,40px_40px] px-8 py-20">
+    <footer className="bg-forest bg-[radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%),radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%)] bg-[length:80px_80px] bg-[position:0_0,40px_40px] px-8 py-20">
       <section>
         <div className="flex justify-center gap-40">
           <div className="flex flex-col gap-4">
