@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { useActionState } from 'react';
-import { initialAuthFormState, signUpAction } from '@/app/auth/actions';
+import { initialAuthFormState } from '@/app/auth/form-state';
+import { signUpAction } from '@/app/auth/actions';
 import FormComponent from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';

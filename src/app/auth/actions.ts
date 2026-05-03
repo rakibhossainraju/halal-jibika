@@ -3,14 +3,7 @@
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { auth } from '@/auth';
-
-export type AuthFormState = {
-  error: string | null;
-};
-
-export const initialAuthFormState: AuthFormState = {
-  error: null,
-};
+import type { AuthFormState } from './form-state';
 
 function getField(formData: FormData, key: string): string {
   const value = formData.get(key);
