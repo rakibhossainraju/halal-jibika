@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
   formTitle?: string;
-  getFormData: (data: { [k: string]: FormDataEntryValue }) => void;
   children: React.ReactNode;
 }
 
@@ -12,7 +11,7 @@ export interface FormRef {
 }
 
 const FormComponent = forwardRef<FormRef, FormProps>(function FormComponent(
-  { formTitle = "", getFormData, children, ...otherProps },
+  { formTitle = "", children, ...otherProps },
   ref,
 ) {
   const formRef = useRef<HTMLFormElement>(null);
@@ -22,13 +21,6 @@ const FormComponent = forwardRef<FormRef, FormProps>(function FormComponent(
       formRef.current?.reset();
     },
   }));
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const formDataObj = Object.fromEntries(formData);
-    getFormData(formDataObj);
-  };
 
   const titleParts = formTitle.split(" ");
   const firstPart = titleParts[0];
@@ -45,7 +37,6 @@ const FormComponent = forwardRef<FormRef, FormProps>(function FormComponent(
         <form
           className="[&_button]:rounded-[3px] [&_button]:mt-8 [&_button]:w-full"
           ref={formRef}
-          onSubmit={handleSubmit}
           {...otherProps}
         >
           {children}

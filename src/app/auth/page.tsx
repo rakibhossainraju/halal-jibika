@@ -1,39 +1,16 @@
-'use client';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+import { auth } from '@/auth';
+import AuthPageClient from '@/components/auth/AuthPageClient';
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import SignInComponent from "@/components/sign-in/SignInComponent";
-import SignUpComponent from "@/components/sign-up/SignUpComponent";
-import SocialLogins from "@/components/social-logins/SocialLogins";
+export default async function AuthPage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
-const AuthPage: React.FC = () => {
-  const [hasAccount, setHasAccount] = useState(true);
+  if (session) {
+    redirect('/profile');
+  }
 
-  return (
-    <>
-      <section className="flex items-center justify-center min-h-320 gap-20 py-20">
-        <div className="w-[45%] flex justify-center">
-          <img src="/assets/images/Login.gif" alt="authentication gif" className="max-w-full h-auto" />
-        </div>
-        <div className="w-[45%] flex flex-col items-center">
-          <div>
-            {hasAccount ? <SignInComponent /> : <SignUpComponent />}
-          </div>
-          <Button
-            variant="link"
-            className="text-[1.8rem] mt-8"
-            onClick={() => setHasAccount(!hasAccount)}
-          >
-            {!hasAccount ? "Already" : "Don't "} have{" "}
-            {!hasAccount ? "an" : "any"} account.{" "}
-            {hasAccount ? "Sign up" : "Sign in"}
-          </Button>
-          <h3 className="text-[2.5rem] font-bold text-gray-400 my-8">OR</h3>
-          <SocialLogins />
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default AuthPage;
+  return <AuthPageClient />;
+}

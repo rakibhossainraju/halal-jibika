@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { Inter, El_Messiri, Open_Sans, Playfair_Display_SC } from 'next/font/google';
 import Script from 'next/script';
 import '@styles/globals.css';
+import { auth } from '@/auth';
 import NavbarComponent from '@/components/navbar/NavbarComponent';
 import FooterComponent from '@/components/footer/FooterComponent';
 import { HandleOnComplete } from '@/lib/custom-router';
@@ -23,12 +25,17 @@ export const metadata: Metadata = {
   description: 'Find your dream job',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
   const isDevelopment = process?.env?.NODE_ENV === 'development';
+
   return (
     <html
       lang="en"
@@ -47,7 +54,16 @@ export default function RootLayout({
         <ProgressBarController />
         <HandleOnComplete />
         <Suspense fallback={null}>
-          <NavbarComponent />
+          <NavbarComponent
+            user={
+              session?.user
+                ? {
+                    name: session.user.name ?? null,
+                    image: session.user.image ?? null,
+                  }
+                : null
+            }
+          />
         </Suspense>
         <ViewTransition>
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-[2rem]">Loading...</div>}>

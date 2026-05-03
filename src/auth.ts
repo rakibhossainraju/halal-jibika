@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3';
 import { betterAuth } from 'better-auth';
+import { nextCookies } from 'better-auth/next-js';
 
 const socialProviders = {
   ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
@@ -34,5 +35,6 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
+  plugins: [nextCookies()],
   ...(Object.keys(socialProviders).length > 0 ? { socialProviders } : {}),
 });

@@ -5,12 +5,18 @@ import { Link } from '@router/customized';
 import { usePathname } from 'next/navigation';
 import ButtonComponent, { BUTTON_TYPE_CLASSES } from '../button/ButtonComponent';
 import { navLinks } from '../../routes/nav-links';
-import { authClient } from '@/lib/auth-client';
 
-const NavbarComponent: React.FC = () => {
+type NavbarUser = {
+  name: string | null;
+  image: string | null;
+} | null;
+
+interface NavbarComponentProps {
+  user: NavbarUser;
+}
+
+const NavbarComponent: React.FC<NavbarComponentProps> = ({ user }) => {
   const pathname = usePathname();
-  const { data: session } = authClient.useSession();
-  const user = session?.user;
 
   return (
     <nav className="flex items-center justify-between px-12 py-8 shadow-md">

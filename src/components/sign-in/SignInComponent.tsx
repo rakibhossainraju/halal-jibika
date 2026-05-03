@@ -1,52 +1,25 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { toast } from 'sonner';
-import { authClient } from '@/lib/auth-client';
-import FormComponent, { FormRef } from '../form/FormComponent';
+import React from 'react';
+import { useActionState } from 'react';
+import { initialAuthFormState, signInAction } from '@/app/auth/actions';
+import FormComponent from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';
 
 const SignInComponent: React.FC = () => {
-  const formRef = useRef<FormRef>(null);
-  const [loading, setLoading] = React.useState(false);
-
-  const handleSubmit = async (data: { [k: string]: FormDataEntryValue }) => {
-    const email = (data.email as string) || '';
-    const password = (data.password as string) || '';
-
-    if (!email.trim()) {
-      toast.error("Please enter your email");
-      return;
-    }
-    if (!password.trim()) {
-      toast.error("Please enter your password");
-      return;
-    }
-
-    setLoading(true);
-    const { error } = await authClient.signIn.email({ email, password });
-    setLoading(false);
-
-    if (error) {
-      toast.error(error.message || 'Sign in failed');
-      return;
-    }
-
-    toast.success('Signed in successfully');
-    formRef.current?.clear();
-  };
+  const [state, formAction, pending] = useActionState(signInAction, initialAuthFormState);
 
   return (
     <FormComponent
       formTitle="Sign In"
-      getFormData={handleSubmit}
+      action={formAction}
       style={{ width: "40rem", marginTop: "17rem" }}
-      ref={formRef}
     >
       <InputComponent labelText="User Email" type="email" name="email" required />
       <InputComponent labelText="Password" type="password" name="password" required />
-      <ButtonComponent isLoading={loading}>Sign in</ButtonComponent>
+      {state.error && <p className="text-[#9b211b] mt-4 text-[1.5rem]">{state.error}</p>}
+      <ButtonComponent isLoading={pending}>Sign in</ButtonComponent>
     </FormComponent>
   );
 };
