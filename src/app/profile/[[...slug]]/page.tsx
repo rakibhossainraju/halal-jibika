@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { Link, useRouter } from '@router/customized';
-import { signOut } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/lib/firebase";
+import { authClient } from '@/lib/auth-client';
 import DashboardComponent from "../DashboardComponent";
 
 const sidebarLinks = [
@@ -68,19 +66,20 @@ const routeElements: { [key: string]: React.ReactNode } = {
 
 function ProfileContent({ slug }: { slug: string }) {
   const router = useRouter();
-  const [user] = useAuthState(auth);
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
 
   return (
     <main className="flex mt-[1rem]">
       <section className="w-[35rem] h-[90vh] overflow-y-auto no-scrollbar">
         <div className="flex flex-col items-center justify-center gap-[1.5rem] my-[3rem] mb-[4rem]">
           <img
-            src={user?.photoURL || "https://picsum.photos/200/300"}
+            src={user?.image || "https://picsum.photos/200/300"}
             alt="profile picture"
             className="rounded-full w-[8rem] aspect-square"
           />
           <h3 className="text-[#001e00] text-[2.5rem] font-semibold">
-            {user?.displayName || "User Name"}
+            {user?.name || "User Name"}
           </h3>
         </div>
         <div className="side-navigation">
@@ -92,14 +91,11 @@ function ProfileContent({ slug }: { slug: string }) {
               return (
                 <li key={link.path} className="mx-auto mb-[1rem] max-w-[22rem]">
                   {isLogout ? (
-                    <button
-                      onClick={async () => {
-                        await signOut(auth);
-                        if (typeof window !== 'undefined') {
-                          localStorage.setItem("isLoggedIn", "false");
-                        }
-                        router.push("/");
-                      }}
+                      <button
+                        onClick={async () => {
+                          await authClient.signOut();
+                          router.push("/");
+                        }}
                       className="w-full rounded-[1.5rem] text-[#001e00] flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 hover:text-[#9b211b]"
                     >
                       <img src={link.icon} alt={link.name} className="w-[2.2rem] aspect-square" />

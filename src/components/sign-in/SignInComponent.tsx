@@ -2,18 +2,16 @@
 
 import React, { useRef } from 'react';
 import { toast } from 'react-toastify';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { auth } from "@/lib/firebase";
+import { authClient } from '@/lib/auth-client';
 import FormComponent, { FormRef } from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';
 
 const SignInComponent: React.FC = () => {
   const formRef = useRef<FormRef>(null);
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = (data: { [k: string]: FormDataEntryValue }) => {
+  const handleSubmit = async (data: { [k: string]: FormDataEntryValue }) => {
     const email = (data.email as string) || '';
     const password = (data.password as string) || '';
 
@@ -25,12 +23,19 @@ const SignInComponent: React.FC = () => {
       toast.error("Please enter your password");
       return;
     }
-    signInWithEmailAndPassword(email, password);
-  };
 
-  if (error) {
-    toast.error(error.message);
-  }
+    setLoading(true);
+    const { error } = await authClient.signIn.email({ email, password });
+    setLoading(false);
+
+    if (error) {
+      toast.error(error.message || 'Sign in failed');
+      return;
+    }
+
+    toast.success('Signed in successfully');
+    formRef.current?.clear();
+  };
 
   return (
     <FormComponent

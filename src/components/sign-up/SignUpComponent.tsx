@@ -2,20 +2,14 @@
 
 import React, { useRef } from 'react';
 import { toast } from 'react-toastify';
-import {
-  useCreateUserWithEmailAndPassword,
-  useUpdateProfile,
-} from 'react-firebase-hooks/auth';
-import { auth } from "@/lib/firebase";
+import { authClient } from '@/lib/auth-client';
 import FormComponent, { FormRef } from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';
 import ButtonComponent from '../button/ButtonComponent';
 
 const SignUpComponent: React.FC = () => {
   const formRef = useRef<FormRef>(null);
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  const [updateUserProfile] = useUpdateProfile(auth);
+  const [loading, setLoading] = React.useState(false);
 
   const handleSubmit = async (data: { [k: string]: FormDataEntryValue }) => {
     const displayName = (data.displayName as string) || '';
@@ -39,15 +33,22 @@ const SignUpComponent: React.FC = () => {
       return;
     }
 
-    const success = await createUserWithEmailAndPassword(email, password);
-    if (success) {
-      await updateUserProfile({ displayName });
-    }
-  };
+    setLoading(true);
+    const { error } = await authClient.signUp.email({
+      email,
+      password,
+      name: displayName,
+    });
+    setLoading(false);
 
-  if (error) {
-    toast.error(error.message);
-  }
+    if (error) {
+      toast.error(error.message || 'Sign up failed');
+      return;
+    }
+
+    toast.success('Account created successfully');
+    formRef.current?.clear();
+  };
 
   return (
     <FormComponent

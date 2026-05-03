@@ -58,11 +58,15 @@
 }
 
 @layer base {
+  html {
+    font-size: 62.5%;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 1.6rem;
   }
 }
 

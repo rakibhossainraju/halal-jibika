@@ -5,12 +5,12 @@ import { Link } from '@router/customized';
 import { usePathname } from 'next/navigation';
 import ButtonComponent, { BUTTON_TYPE_CLASSES } from '../button/ButtonComponent';
 import { navLinks } from '../../routes/nav-links';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '@/lib/firebase';
+import { authClient } from '@/lib/auth-client';
 
 const NavbarComponent: React.FC = () => {
   const pathname = usePathname();
-  const [user] = useAuthState(auth);
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
 
   return (
     <nav className="flex items-center justify-between px-12 py-8 shadow-md">
@@ -23,9 +23,7 @@ const NavbarComponent: React.FC = () => {
       <ul className="flex items-center gap-18">
         {navLinks.map((link) => {
           if (link.name === "Sign Up") {
-            const label = (typeof window !== 'undefined' && localStorage.getItem("isLoggedIn") === "true")
-              ? "Profile"
-              : link.name;
+            const label = user ? "Profile" : link.name;
             
             return (
               <li key={link.name} className="ml-8">

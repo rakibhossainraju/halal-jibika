@@ -25,3 +25,6 @@ dist-ssr
 
 # Next.js
 .next
+
+# Local auth database
+database.sqlite
