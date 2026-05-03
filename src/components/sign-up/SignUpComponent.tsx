@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { authClient } from '@/lib/auth-client';
 import FormComponent, { FormRef } from '../form/FormComponent';
 import InputComponent from '../input/InputComponent';

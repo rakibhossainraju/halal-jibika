@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter, El_Messiri, Open_Sans, Playfair_Display_SC } from 'next/font/google';
+import Script from 'next/script';
 import '@styles/globals.css';
 import NavbarComponent from '@/components/navbar/NavbarComponent';
 import FooterComponent from '@/components/footer/FooterComponent';
 import { HandleOnComplete } from '@/lib/custom-router';
 import ProgressBarController from '@/components/ProgressBarController';
+import { Toaster } from '@/components/ui/sonner';
 import { ViewTransition, Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -34,7 +36,11 @@ export default function RootLayout({
     >
       <head>
         {isDevelopment && (
-          <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" />
+          <Script
+            crossOrigin="anonymous"
+            src="//unpkg.com/react-scan/dist/auto.global.js"
+            strategy="afterInteractive"
+          />
         )}
       </head>
       <body className="antialiased">
@@ -48,6 +54,7 @@ export default function RootLayout({
             {children}
           </Suspense>
         </ViewTransition>
+        <Toaster richColors />
         <FooterComponent />
       </body>
     </html>

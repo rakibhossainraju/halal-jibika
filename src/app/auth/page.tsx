@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Button } from '@/components/ui/button';
 import SignInComponent from "@/components/sign-in/SignInComponent";
 import SignUpComponent from "@/components/sign-up/SignUpComponent";
 import SocialLogins from "@/components/social-logins/SocialLogins";
@@ -12,7 +11,6 @@ const AuthPage: React.FC = () => {
 
   return (
     <>
-      <ToastContainer autoClose={1000} />
       <section className="flex items-center justify-center min-h-320 gap-20 py-20">
         <div className="w-[45%] flex justify-center">
           <img src="/assets/images/Login.gif" alt="authentication gif" className="max-w-full h-auto" />
@@ -21,14 +19,15 @@ const AuthPage: React.FC = () => {
           <div>
             {hasAccount ? <SignInComponent /> : <SignUpComponent />}
           </div>
-          <button
-            className="bg-transparent border-none text-[#73d016] font-semibold text-[1.8rem] cursor-pointer mt-8 transition-colors hover:text-[#73d016]"
+          <Button
+            variant="link"
+            className="text-[1.8rem] mt-8"
             onClick={() => setHasAccount(!hasAccount)}
           >
             {!hasAccount ? "Already" : "Don't "} have{" "}
             {!hasAccount ? "an" : "any"} account.{" "}
             {hasAccount ? "Sign up" : "Sign in"}
-          </button>
+          </Button>
           <h3 className="text-[2.5rem] font-bold text-gray-400 my-8">OR</h3>
           <SocialLogins />
         </div>

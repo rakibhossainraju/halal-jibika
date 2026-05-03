@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { authClient } from '@/lib/auth-client';
 
 const SocialLogins: React.FC = () => {
