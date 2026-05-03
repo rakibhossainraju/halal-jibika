@@ -16,7 +16,7 @@ const NavbarComponent: React.FC = () => {
     <nav className="flex items-center justify-between px-12 py-8 shadow-md">
       <Link 
         href="/" 
-        className="font-el-messiri text-[3rem] text-[#73d016] hover:text-[#73d016] transition-colors duration-300"
+        className="font-el-messiri text-[3rem] text-primary hover:text-primary transition-colors duration-300"
       >
         Halal Jibika
       </Link>
@@ -44,9 +44,9 @@ const NavbarComponent: React.FC = () => {
             <li key={link.name}>
               <Link
                 href={link.path}
-                className={`text-[1.8rem] transition-colors duration-300 relative hover:text-[#73d016] ${
-                  isActive ? 'text-[#73d016] after:scale-100' : 'text-[#001e00] after:scale-0'
-                } after:content-[""] after:absolute after:bg-linear-to-r after:from-[#c9ee59] after:to-[#73d016] after:rounded-[2px] after:left-1/2 after:-bottom-6 after:w-34 after:height-[2px] after:translate-x-[-1/2] after:transition-transform after:duration-500`}
+                className={`text-[1.8rem] transition-colors duration-300 relative hover:text-primary ${
+                  isActive ? 'text-primary after:scale-100' : 'text-foreground after:scale-0'
+                } after:content-[""] after:absolute after:bg-linear-to-r after:from-primary-mid after:to-primary after:rounded-xs after:left-1/2 after:-bottom-6 after:w-34 after:height-[2px] after:translate-x-[-1/2] after:transition-transform after:duration-500`}
               >
                 {link.name}
               </Link>
