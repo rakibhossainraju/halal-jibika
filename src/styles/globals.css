@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: #ffffe0;
+    --foreground: #1c2d1c;
+    --border: #e5fb95;
+    --ring: #73d016;
+  }
+}
+
+@layer utilities {
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@theme inline {
+  --font-el-messiri: var(--font-el-messiri);
+  --font-open-sans: var(--font-open-sans);
+  --font-playfair-display: var(--font-playfair-display);
+  --font-inter: var(--font-inter);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-primary: #73d016;
+  --color-primary-mid: #c9ee59;
+  --color-primary-soft: #e5fb95;
+  --color-primary-light: #f5ffbe;
+  --color-primary-surface: #ffffe0;
+
+  --animate-fade-slide-in-from-left: fade-slide-in-from-left 1.1s ease;
+  --animate-fade-slide-in-from-right: fade-slide-in-from-right 1.1s ease 0.6s backwards;
+  --animate-fadein: fadein 1s ease 1.2s backwards;
+  --animate-fadein-delayed: fadein 0.8s ease 2s backwards;
+  --animate-fadein-img: fadein 1.2s ease-in-out 0.6s backwards;
+
+  @keyframes fade-slide-in-from-left {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fade-slide-in-from-right {
+    from { opacity: 0; transform: translateX(50px); word-spacing: -20rem; }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 1.6rem;
+  }
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #73d016;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
