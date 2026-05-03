@@ -13,10 +13,10 @@ const NavbarComponent: React.FC = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <nav className="flex items-center justify-between px-12 py-8 shadow-[0_0_4px_3px_rgba(12,92,0,0.25)]">
+    <nav className="flex items-center justify-between px-12 py-8 shadow-md">
       <Link 
         href="/" 
-        className="font-el-messiri text-[3rem] color-brand-green hover:text-up-green transition-colors duration-300"
+        className="font-el-messiri text-[3rem] text-[#73d016] hover:text-[#73d016] transition-colors duration-300"
       >
         Halal Jibika
       </Link>
@@ -44,9 +44,9 @@ const NavbarComponent: React.FC = () => {
             <li key={link.name}>
               <Link
                 href={link.path}
-                className={`text-[1.8rem] transition-colors duration-300 relative hover:text-up-green ${
-                  isActive ? 'text-up-green after:scale-100' : 'text-up-black after:scale-0'
-                } after:content-[""] after:absolute after:bg-linear-to-r after:from-up-lime after:to-up-green after:rounded-[2px] after:left-1/2 after:-bottom-6 after:w-34 after:height-[2px] after:translate-x-[-1/2] after:transition-transform after:duration-500`}
+                className={`text-[1.8rem] transition-colors duration-300 relative hover:text-[#73d016] ${
+                  isActive ? 'text-[#73d016] after:scale-100' : 'text-[#001e00] after:scale-0'
+                } after:content-[""] after:absolute after:bg-linear-to-r after:from-[#c9ee59] after:to-[#73d016] after:rounded-[2px] after:left-1/2 after:-bottom-6 after:w-34 after:height-[2px] after:translate-x-[-1/2] after:transition-transform after:duration-500`}
               >
                 {link.name}
               </Link>

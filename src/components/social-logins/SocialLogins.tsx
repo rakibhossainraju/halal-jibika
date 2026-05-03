@@ -12,7 +12,7 @@ const SocialLogins: React.FC = () => {
   const [signInWithFacebook] = useSignInWithFacebook(auth);
 
   return (
-    <div className="flex gap-20 my-8 px-12 py-8 rounded-[8px] shadow-[1px_2px_10px_4px_rgba(128,128,128,0.20)]">
+    <div className="flex gap-20 my-8 px-12 py-8 rounded-[8px] shadow-lg">
       <button onClick={() => signInWithGoogle()} className="bg-transparent">
         <img src="/assets/images/googleLogo.svg" alt="google logo" className="w-24 aspect-square transition-all duration-500 hover:scale-125 hover:hue-rotate-40" />
       </button>

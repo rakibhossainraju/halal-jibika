@@ -22,7 +22,7 @@ const AuthPage: React.FC = () => {
             {hasAccount ? <SignInComponent /> : <SignUpComponent />}
           </div>
           <button
-            className="bg-transparent border-none text-brand-green font-semibold text-[1.8rem] cursor-pointer mt-8 transition-colors hover:text-up-green"
+            className="bg-transparent border-none text-[#73d016] font-semibold text-[1.8rem] cursor-pointer mt-8 transition-colors hover:text-[#73d016]"
             onClick={() => setHasAccount(!hasAccount)}
           >
             {!hasAccount ? "Already" : "Don't "} have{" "}

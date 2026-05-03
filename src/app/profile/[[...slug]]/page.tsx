@@ -79,7 +79,7 @@ function ProfileContent({ slug }: { slug: string }) {
             alt="profile picture"
             className="rounded-full w-[8rem] aspect-square"
           />
-          <h3 className="text-up-black text-[2.5rem] font-semibold">
+          <h3 className="text-[#001e00] text-[2.5rem] font-semibold">
             {user?.displayName || "User Name"}
           </h3>
         </div>
@@ -100,7 +100,7 @@ function ProfileContent({ slug }: { slug: string }) {
                         }
                         router.push("/");
                       }}
-                      className="w-full rounded-[1.5rem] text-up-black flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 hover:text-brick"
+                      className="w-full rounded-[1.5rem] text-[#001e00] flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 hover:text-[#9b211b]"
                     >
                       <img src={link.icon} alt={link.name} className="w-[2.2rem] aspect-square" />
                       <p className="text-[1.7rem]">{link.name}</p>
@@ -109,7 +109,7 @@ function ProfileContent({ slug }: { slug: string }) {
                     <Link
                       href={`/profile/${link.path}`}
                       className={`rounded-[1.5rem] flex items-center font-semibold gap-[1rem] p-[2rem] transition-all duration-300 ${
-                        isActive ? 'text-white bg-up-green-hc [&_img]:brightness-50' : 'text-up-black'
+                        isActive ? 'text-white bg-[#73d016] [&_img]:brightness-50' : 'text-[#001e00]'
                       }`}
                     >
                       <img src={link.icon} alt={link.name} className="w-[2.2rem] aspect-square" />
@@ -122,7 +122,7 @@ function ProfileContent({ slug }: { slug: string }) {
           </ul>
         </div>
       </section>
-      <section className="bg-gray-90 rounded-tl-[5rem] py-[5rem] px-[8rem] pb-[2rem] pr-[2rem] w-full h-[100vh] overflow-y-auto no-scrollbar">
+      <section className="bg-[#f2f7f2] rounded-tl-[5rem] py-[5rem] px-[8rem] pb-[2rem] pr-[2rem] w-full h-[100vh] overflow-y-auto no-scrollbar">
         {routeElements[slug] || routeElements.dashboard}
       </section>
       

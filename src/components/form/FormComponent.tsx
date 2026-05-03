@@ -35,13 +35,13 @@ const FormComponent = forwardRef<FormRef, FormProps>(function FormComponent(
 
   return (
     <form
-      className="shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] rounded-[10px] px-16 py-8 pb-12 my-6 mx-auto max-w-208 [&_button]:rounded-[3px] [&_button]:mt-8 [&_button]:w-full"
+      className="shadow-xl rounded-[10px] px-16 py-8 pb-12 my-6 mx-auto max-w-208 [&_button]:rounded-[3px] [&_button]:mt-8 [&_button]:w-full"
       ref={formRef}
       onSubmit={handleSubmit}
       {...otherProps}
     >
-      <h1 className="font-el-messiri text-[4.7rem] text-up-green text-center">
-        {firstPart} <span className="text-transparent [-webkit-text-stroke:2px_var(--up-green)]">{secondPart}</span>
+      <h1 className="font-el-messiri text-[4.7rem] text-[#73d016] text-center">
+        {firstPart} <span className="text-transparent [-webkit-text-stroke:2px_#73d016]">{secondPart}</span>
       </h1>
       {children}
     </form>

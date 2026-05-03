@@ -25,20 +25,20 @@ const support = [
 
 const FooterComponent: React.FC = () => {
   return (
-    <footer className="bg-forest bg-[radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%),radial-gradient(closest-side,transparent_98%,rgba(0,0,0,0.08)_99%)] bg-[length:80px_80px] bg-[position:0_0,40px_40px] px-8 py-20">
+    <footer className="bg-[#0d423d] px-8 py-20">
       <section>
         <div className="flex justify-center gap-40">
           <div className="flex flex-col gap-4">
             <Link 
               href="/" 
-              className="font-el-messiri text-mint text-[4rem] hover:text-up-green transition-colors duration-300"
+              className="font-el-messiri text-[#91e6b3] text-[4rem] hover:text-[#73d016] transition-colors duration-300"
             >
               Halal Jibika
             </Link>
             <div className="flex flex-col gap-2">
-              <Link href="" className="text-gray-90 hover:text-sky transition-colors">Face Book</Link>
-              <Link href="" className="text-gray-90 hover:text-sky transition-colors">Twitter</Link>
-              <Link href="" className="text-gray-90 hover:text-sky transition-colors">Github</Link>
+              <Link href="" className="text-[#f2f7f2] hover:text-[#01cdbe] transition-colors">Face Book</Link>
+              <Link href="" className="text-[#f2f7f2] hover:text-[#01cdbe] transition-colors">Twitter</Link>
+              <Link href="" className="text-[#f2f7f2] hover:text-[#01cdbe] transition-colors">Github</Link>
             </div>
           </div>
           <ULComponent title="Services" lists={services} />
@@ -46,7 +46,7 @@ const FooterComponent: React.FC = () => {
           <ULComponent title="Support" lists={support} />
         </div>
       </section>
-      <h4 className="text-gray-60 text-[2rem] font-extralight text-center mt-24">
+      <h4 className="text-[#beccbe] text-[2rem] font-extralight text-center mt-24">
         &#169; All copy rights reserved to Light Yagami 2024
       </h4>
     </footer>

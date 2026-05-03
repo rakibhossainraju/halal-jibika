@@ -22,12 +22,12 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   const baseStyles = 'rounded-[10rem] border-none cursor-pointer text-[1.6rem] font-semibold px-10 py-[1.1rem] flex justify-center items-center transition-colors duration-600';
   
   const typeStyles = {
-    [BUTTON_TYPE_CLASSES.filled]: 'text-white bg-brand-green hover:bg-up-green',
-    [BUTTON_TYPE_CLASSES.outlined]: 'bg-white border-2 border-solid border-brand-green text-brand-green',
-    [BUTTON_TYPE_CLASSES.white]: 'bg-white text-forest',
+    [BUTTON_TYPE_CLASSES.filled]: 'text-white bg-[#73d016] hover:bg-[#73d016]',
+    [BUTTON_TYPE_CLASSES.outlined]: 'bg-white border-2 border-solid border-[#73d016] text-[#73d016]',
+    [BUTTON_TYPE_CLASSES.white]: 'bg-white text-[#0d423d]',
   };
 
-  const disabledStyles = 'bg-gray-15 hover:bg-gray-15 cursor-default';
+  const disabledStyles = 'bg-[#1f321f] hover:bg-[#1f321f] cursor-default';
 
   return (
     <button

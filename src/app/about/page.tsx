@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsLatterComponent from "@/components/news-latter/NewsLatterComponent";
 
-const colors = ["#FFFFEC", "#EEF5FF", "#F6D5F6"];
+const colors = ["#ffffe0", "#f5ffbe", "#e5fb95"];
 const featureData = [
   {
     feature: "Ethical Opportunities",
@@ -38,11 +38,11 @@ const featureData = [
 const AboutPage: React.FC = () => {
   return (
     <main className="min-h-screen">
-      <h2 className="text-up-green font-el-messiri font-black text-[6.5rem] leading-40 capitalize text-center my-8">About Us</h2>
+      <h2 className="text-[#73d016] font-el-messiri font-black text-[6.5rem] leading-40 capitalize text-center my-8">About Us</h2>
       
-      <div className="flex justify-center items-center max-w-[90%] mx-auto my-12 rounded-[10px] bg-forest overflow-hidden">
+      <div className="flex justify-center items-center max-w-[90%] mx-auto my-12 rounded-[10px] bg-[#0d423d] overflow-hidden">
         <div className="w-[55%] text-white p-4">
-          <h3 className="text-mint font-el-messiri text-[6rem] ml-12 animate-fade-slide-in-from-left">Our Story</h3>
+          <h3 className="text-[#91e6b3] font-el-messiri text-[6rem] ml-12 animate-fade-slide-in-from-left">Our Story</h3>
           <p className="text-[2rem] font-medium px-28 leading-[1.7] animate-fade-slide-in-from-left">
             Welcome to Halal Jibika, where the intersection of career growth and
             ethical principles thrives. Our journey began with a vision to
@@ -51,16 +51,16 @@ const AboutPage: React.FC = () => {
             guided by the principles of Islam.
           </p>
         </div>
-        <div className="bg-gray-80 w-[45%] rounded-r-[10px]">
+        <div className="bg-[#e4ebe4] w-[45%] rounded-r-[10px]">
           <img src="/assets/images/outStory.svg" alt="Our story svg" className="h-200 mx-auto" />
         </div>
       </div>
 
-      <div className="flex flex-row-reverse justify-center items-center max-w-[90%] mx-auto my-32 rounded-[10px] bg-gray-90 overflow-hidden">
+      <div className="flex flex-row-reverse justify-center items-center max-w-[90%] mx-auto my-32 rounded-[10px] bg-[#f2f7f2] overflow-hidden">
         <div className="w-[55%] p-4 text-right">
-          <h3 className="text-up-black-dark font-el-messiri text-[6rem] mr-12 animate-[slide-in-from-right_1.1s_ease]">Mission Statement</h3>
-          <p className="text-gray-01 text-[2rem] font-medium px-[3.6rem] pr-28 leading-[1.7] text-right animate-[slide-in-from-right_1.1s_ease]">Empowering Careers, Preserving Values.</p>
-          <p className="text-gray-01 text-[2rem] font-medium px-[3.6rem] pr-28 leading-[1.7] text-right animate-[slide-in-from-right_1.1s_ease]">
+          <h3 className="text-[#021202] font-el-messiri text-[6rem] mr-12 animate-[slide-in-from-right_1.1s_ease]">Mission Statement</h3>
+          <p className="text-[#5e6d55] text-[2rem] font-medium px-[3.6rem] pr-28 leading-[1.7] text-right animate-[slide-in-from-right_1.1s_ease]">Empowering Careers, Preserving Values.</p>
+          <p className="text-[#5e6d55] text-[2rem] font-medium px-[3.6rem] pr-28 leading-[1.7] text-right animate-[slide-in-from-right_1.1s_ease]">
             At Halal Jibika, our mission is clear: to empower individuals in
             their career pursuits while upholding the values of integrity,
             fairness, and respect. We are committed to creating a space where
@@ -68,22 +68,22 @@ const AboutPage: React.FC = () => {
             ethical beliefs.
           </p>
         </div>
-        <div className="bg-gray-70 w-[45%] rounded-l-[10px]">
+        <div className="bg-[#d5e0d5] w-[45%] rounded-l-[10px]">
           <img src="/assets/images/teamWorkAnimate.svg" alt="Team work" className="h-200 mx-auto" />
         </div>
       </div>
 
       <section className="my-40 text-center">
-        <h3 className="text-forest font-playfair-display uppercase text-[5rem] my-20 mb-24">What Sets Us Apart</h3>
+        <h3 className="text-[#0d423d] font-playfair-display uppercase text-[5rem] my-20 mb-24">What Sets Us Apart</h3>
         <div className="flex flex-wrap justify-center gap-20 flex-1">
           {featureData.map((data, index) => (
             <div
               key={data.feature}
               style={{ backgroundColor: colors[index % colors.length] }}
-              className="rounded-[10px] shadow-[rgba(0,0,0,0.04)_0px_3px_5px] py-20 max-w-140 transition-transform duration-200 hover:scale-105"
+              className="rounded-[10px] shadow-md py-20 max-w-140 transition-transform duration-200 hover:scale-105"
             >
-              <h4 className="text-up-black-dark font-el-messiri text-[2.3rem] font-semibold">{data.feature}</h4>
-              <p className="text-gray-10 text-[1.5rem] font-medium leading-[1.7] px-16 pt-6">{data.description}</p>
+              <h4 className="text-[#021202] font-el-messiri text-[2.3rem] font-semibold">{data.feature}</h4>
+              <p className="text-[#1c2d1c] text-[1.5rem] font-medium leading-[1.7] px-16 pt-6">{data.description}</p>
             </div>
           ))}
         </div>
